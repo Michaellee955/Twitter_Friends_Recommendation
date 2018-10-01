@@ -1,0 +1,129 @@
+Messages
+========
+
+supervised/collect_v2/Streamlistener.py
+  Line: None
+    pep8: E101 / indentation contains mixed spaces and tabs (col 1)
+  Line: 59
+    pylint: syntax-error / inconsistent use of tabs and spaces in indentation (<unknown>, line 59)
+
+supervised/collect_v2/Training.py
+  Line: None
+    pep8: E101 / indentation contains mixed spaces and tabs (col 1)
+  Line: 4
+    pylint: import-error / Unable to import 'keras.utils'
+  Line: 5
+    pylint: import-error / Unable to import 'keras.models'
+  Line: 6
+    pylint: import-error / Unable to import 'keras.layers.core'
+  Line: 9
+    pylint: wrong-import-position / Import "from sklearn.feature_extraction.text import CountVectorizer" should be placed at the top of the module
+  Line: 10
+    pylint: wrong-import-position / Import "from sklearn.metrics import accuracy_score" should be placed at the top of the module
+  Line: 11
+    pylint: wrong-import-position / Import "import os" should be placed at the top of the module
+  Line: 12
+    pylint: import-error / Unable to import 'tensorflow'
+    pylint: wrong-import-position / Import "import tensorflow as tf" should be placed at the top of the module
+  Line: 14
+    pylint: import-error / Unable to import 'keras.utils'
+    pylint: wrong-import-position / Import "from keras.utils import plot_model" should be placed at the top of the module
+  Line: 15
+    pylint: wrong-import-position / Import "from os.path import dirname, abspath" should be placed at the top of the module
+  Line: 17
+    pylint: wrong-import-position / Import "import xlrd" should be placed at the top of the module
+  Line: 31
+    pylint: undefined-variable / Undefined variable 'xrange' (col 14)
+  Line: 46
+    pylint: undefined-variable / Undefined variable 'xrange' (col 9)
+  Line: 49
+    pylint: undefined-variable / Undefined variable 'xrange' (col 9)
+  Line: 69
+    pep8: E116 / unexpected indentation (comment) (col 77)
+
+supervised/collect_v2/backprocess.py
+  Line: 1
+    pylint: import-error / Unable to import 'tweepy'
+  Line: 2
+    pylint: import-error / Unable to import 'Streamlistener'
+  Line: 22
+    pep8: E722 / do not use bare except' (col 2)
+
+supervised/collect_v2/labeling.py
+  Line: None
+    pep8: E101 / indentation contains mixed spaces and tabs (col 8)
+  Line: 18
+    pep8: E112 / expected an indented block (col 9)
+    pylint: syntax-error / inconsistent use of tabs and spaces in indentation (<unknown>, line 18)
+
+supervised/collect_v2/main_tweet.py
+  Line: 1
+    pylint: import-error / Unable to import 'test_tweet'
+  Line: 2
+    pylint: import-error / Unable to import 'test_tweet'
+  Line: 3
+    pylint: import-error / Unable to import 'test_tweet'
+  Line: 4
+    pylint: import-error / Unable to import 'tweepy'
+  Line: 5
+    pylint: import-error / Unable to import 'test_tweet'
+  Line: 6
+    pylint: import-error / Unable to import 'tweepy'
+    pylint: multiple-imports / Multiple imports on one line (tweepy, time, sys)
+  Line: 7
+    pylint: import-error / Unable to import 'tweepy'
+
+unsupervised/collect_userid.py
+  Line: None
+    pep8: E101 / indentation contains mixed spaces and tabs (col 1)
+  Line: 3
+    pylint: import-error / Unable to import 'tweepy'
+  Line: 69
+    pylint: pointless-string-statement / String statement has no effect
+
+unsupervised/preprocess.py
+  Line: None
+    pep8: E101 / indentation contains mixed spaces and tabs (col 1)
+  Line: 1
+    pylint: import-error / Unable to import 'test_tweet'
+  Line: 4
+    pylint: import-error / Unable to import 'test_tweet'
+  Line: 5
+    pylint: import-error / Unable to import 'test_tweet'
+    pylint: reimported / Reimport 'preprocess' (imported line 1)
+    pyflakes: F811 / redefinition of unused 'preprocess' from line 1 (col 1)
+  Line: 35
+    pylint: pointless-string-statement / String statement has no effect
+
+unsupervised/tweet_dumper.py
+  Line: 4
+    pylint: import-error / Unable to import 'tweepy'
+  Line: 45
+    pylint: len-as-condition / Do not use `len(SEQUENCE)` to determine if a sequence is empty (col 8)
+  Line: 61
+    pylint: consider-using-enumerate / Consider using enumerate instead of iterating with range and len (col 2)
+  Line: 91
+    pep8: E722 / do not use bare except' (col 3)
+  Line: 107
+    pep8: E722 / do not use bare except' (col 4)
+  Line: 128
+    pylint: pointless-string-statement / String statement has no effect
+
+unsupervised/user_location.py
+  Line: 1
+    pylint: import-error / Unable to import 'tweepy'
+
+
+
+Check Information
+=================
+         Started: 2018-10-01 16:14:07.385773
+        Finished: 2018-10-01 16:14:15.792099
+      Time Taken: 8.41 seconds
+       Formatter: grouped
+        Profiles: default, strictness_low, strictness_medium, strictness_high, strictness_veryhigh, no_doc_warnings, no_test_warnings, no_member_warnings
+      Strictness: low
+  Libraries Used: 
+       Tools Run: dodgy, mccabe, pep8, profile-validator, pyflakes, pylint
+  Messages Found: 50
+

@@ -50,7 +50,7 @@ for i in xrange( 0, test_data['tweet'].size ):
     test_data_string.append(test_data['tweet'][i])      # Appending test data
 
 d = dirname(dirname(abspath(__file__)))
-print d
+print(d)
 tweet_labeling = []
 count_labeling = 0
 with open(d+'/data/output_12051310.csv','rb') as fin:
@@ -61,7 +61,7 @@ with open(d+'/data/output_12051310.csv','rb') as fin:
 			text = line.split(",")[1]
 			tweet_labeling.append(text)
 
-print "Creating Bag of Words representation"
+print("Creating Bag of Words representation")
 
 Vectorizer = CountVectorizer(analyzer = "word",tokenizer = None,preprocessor = None,stop_words = 'english', max_features = 5000)
 
@@ -79,7 +79,7 @@ tweets_labeling = label_data_string_tarnsformed.toarray()
 tweets_single = single_data_string_transformed.toarray()
 #print tweets_test
 
-print "data:", tweets_single
+print("data:", tweets_single)
 
 
 topics_train = numpy.array(train_data["topic"]).astype(int)                 # The topics of train data are stored in an array
@@ -98,10 +98,10 @@ print('tweet_test shape:', topics_onehot_test.shape)
 
 cvscores = []
 
-print 'Bulding the model'
+print('Bulding the model')
 
 input_dimention = tweets_train.shape[1]
-print input_dimention
+print(input_dimention)
 
 model = Sequential()
 model.add(Dense(256, input_dim=input_dimention,activation='relu'))
@@ -120,41 +120,38 @@ model.save('mymodel.h5')
 print("Generating test Predictions, Accurecy")
 
 predited_topics = model.predict_classes(tweets_single, verbose=0)
-print predited_topics
+print(predited_topics)
 #accuracy_of_test = accuracy_score(test_data["topic"], predited_topics)
 #plot_model(model, to_file='model.png')
-"""
-with open('Randombook_csv_test.csv') as csvfile:
-	rows = csv.reader(csvfile)
-	with open('Randombook_csv_testResult.csv','w') as f:
-		writer = csv.writer(f)
-		i = 0 
-		for row in rows:
-			if i == 0:
-				row.append('testResult')
-				writer.writerow(row)
-				i += 1
-			elif i!=0:
-				row.append(predited_topics[i-1])
-				writer.writerow(row)
-				i += 1 
-"""
-"""
-with open(d+'/data/output_12051310.csv','rb') as csvfile:
-	rows = csv.reader(csvfile)
-	with open('testResult12051430.csv','wb') as f:
-		writer = csv.writer(f)
-		i = 0 
-		for row in rows:
-			if i == 0:
-				row.append('testResult')
-				writer.writerow(row)
-				i += 1
-			elif i!=0:
-				row.append(predited_topics[i-1])
-				writer.writerow(row)
-				i += 1 
 
-print  predited_topics
-"""
+# with open('Randombook_csv_test.csv') as csvfile:
+# 	rows = csv.reader(csvfile)
+# 	with open('Randombook_csv_testResult.csv','w') as f:
+# 		writer = csv.writer(f)
+# 		i = 0
+# 		for row in rows:
+# 			if i == 0:
+# 				row.append('testResult')
+# 				writer.writerow(row)
+# 				i += 1
+# 			elif i!=0:
+# 				row.append(predited_topics[i-1])
+# 				writer.writerow(row)
+# 				i += 1
+# with open(d+'/data/output_12051310.csv','rb') as csvfile:
+# 	rows = csv.reader(csvfile)
+# 	with open('testResult12051430.csv','wb') as f:
+# 		writer = csv.writer(f)
+# 		i = 0
+# 		for row in rows:
+# 			if i == 0:
+# 				row.append('testResult')
+# 				writer.writerow(row)
+# 				i += 1
+# 			elif i!=0:
+# 				row.append(predited_topics[i-1])
+# 				writer.writerow(row)
+# 				i += 1
+#
+# print  predited_topics
 #print 'Accurecy is ',accuracy_of_test*100,'%'

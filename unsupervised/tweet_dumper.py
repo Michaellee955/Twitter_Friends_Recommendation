@@ -31,9 +31,9 @@ def get_all_tweets(screen_name):
 	user = api.get_user(screen_name = screen_name)
 	location = user.location
 	lang = user.lang
-	print location
+	print(location)
 	if location and lang =="en":
-		print 1
+		print(1)
 
 		new_tweets = api.user_timeline(screen_name = screen_name,count=200)
 		#save most recent tweets
@@ -85,7 +85,7 @@ if __name__ == '__main__':
 			line = line.replace('\n','')
 			names.append(line)
 	for item in names:
-		print item
+		print(item)
 		try:
 			get_all_tweets(item)
 		except:

@@ -1,9 +1,10 @@
-import tweepy #https://github.com/tweepy/tweepy
-import csv
 import time
-#import test_tweet.py
 
-#Twitter API credentials
+import tweepy  # https://github.com/tweepy/tweepy
+
+# import test_tweet.py
+
+# Twitter API credentials
 
 consumer_key = ""
 consumer_secret = ""
@@ -21,32 +22,32 @@ auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
 
 name = "YaoMing"
-#name = 'Michaellee995'
+# name = 'Michaellee995'
 
 sleeptime = 4
 pages = tweepy.Cursor(api.followers, screen_name=name).pages()
 direct = '/home/minghao/Downloads/big data proj/unsupervised/data_unsupervised'
 
 limit = 500
-with open(direct+'/userName_%s.csv' % name,'wb') as f:
-	while True:
-		try:
-			page = next(pages)
-			time.sleep(sleeptime)
-			limit = limit - 1
-			if limit == 0:
-				break
-		except tweepy.TweepError: #taking extra care of the "rate limit exceeded"
-			time.sleep(60) 
-			page = next(pages)
-		except StopIteration:
-			break
-		for user in page:
-			print(user.id_str)
-			print(user.screen_name)
-			print(user.followers_count)
-			f.write(user.screen_name)
-			f.write('\n')
+with open(direct + '/userName_%s.csv' % name, 'wb') as f:
+    while True:
+        try:
+            page = next(pages)
+            time.sleep(sleeptime)
+            limit = limit - 1
+            if limit == 0:
+                break
+        except tweepy.TweepError:  # taking extra care of the "rate limit exceeded"
+            time.sleep(60)
+            page = next(pages)
+        except StopIteration:
+            break
+        for user in page:
+            print(user.id_str)
+            print(user.screen_name)
+            print(user.followers_count)
+            f.write(user.screen_name)
+            f.write('\n')
 
 """
 #name = "realDonaldTrump"

@@ -65,7 +65,7 @@ class MyListener(StreamListener):
 	def on_data(self,data):
 		try:
 			with open('S:\\python_11191730.json','a') as f:
-				print data,'\n'
+				print(data,'\n')
 				f.write(data)
 				return True
 		except BaseException as e:
@@ -76,7 +76,7 @@ class MyListener(StreamListener):
 		print (status)
 		return True
 def process_or_store(tweet):
-	print json.dumps(tweet)                                                 #use tweet['text'] to print only the text part
+	print(json.dumps(tweet))                                                 #use tweet['text'] to print only the text part
 
 def read_tweets():
 
@@ -201,4 +201,4 @@ def save_to_mongodb(filename,keyword):
 				'label':keyword
 			}
 			user.insert(dic)
-	print "import completed!"          
+	print("import completed!")

@@ -14,9 +14,9 @@ auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
 
 user = api.get_user(screen_name = 'KimKardashian')
-print user.location
-print user.lang
+print(user.location)
+print(user.lang)
 if user.location:
-	print 1
+	print(1)
 else:
-	print 0
+	print(0)

@@ -1,16 +1,18 @@
-import test_tweet
 from test_tweet import preprocess
-from test_tweet import del_stop_word
-from test_tweet import del_word_started_by
 import re
+
+from test_tweet import del_stop_word
+from test_tweet import preprocess
+
+
 def main(text):
-	tokens = preprocess(text)
-	texts = del_stop_word(tokens)
-	texts = ' '.join(filter(lambda x:x[0:4]!='http' 
-		and x[0]!='@',texts))
-	letters_only = re.sub("[^a-zA-Z]"," ", texts)
-	final_texts = ''.join(letters_only)
-	return final_texts
+    tokens = preprocess(text)
+    texts = del_stop_word(tokens)
+    texts = ' '.join(filter(lambda x: x[0:4] != 'http' and x[0] != '@', texts))
+    letters_only = re.sub("[^a-zA-Z]", " ", texts)
+    final_texts = ''.join(letters_only)
+    return final_texts
+
 
 """		
 if __name__ == '__main__':

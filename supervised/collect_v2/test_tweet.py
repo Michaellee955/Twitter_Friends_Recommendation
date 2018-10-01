@@ -79,7 +79,7 @@ class MyListener(StreamListener):
 
 
 def process_or_store(tweet):
-	print json.dumps(tweet)                                                 #use tweet['text'] to print only the text part
+	print(json.dumps(tweet))                                                 #use tweet['text'] to print only the text part
 
 def read_tweets():
 
@@ -214,4 +214,4 @@ def save_to_mongodb(name,context,texts,geo):
 			'label':''
 		}
 		user.insert(dic)
-	print "import completed!"          
+	print("import completed!")
